@@ -18,5 +18,51 @@ public abstract class Juego
 		this.tablero = tablero;
 		this.fichas = fichas;
 	}
+	
+	
+
+
+	public Jugador jugador1() 
+	{
+		return jugador1;
+	}
+	
+	public Jugador jugador2() 
+	{
+		return jugador2;
+	}
+	
+	
+	@Override
+	public String toString()
+	{
+		return nombre;
+	}
+
+
+
+
+	public void mostrarTablero() 
+	{
+		// TODO Auto-generated method stub		
+	}
+
+
+
+
+	public Movimiento crearMovimiento(Jugador jugador, int casillero) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+	public boolean esMovimientoValido(Movimiento movimiento) 
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }
