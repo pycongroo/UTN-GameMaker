@@ -1,19 +1,8 @@
+import java.util.ArrayList;
 
-public class Jugador 
-{
-	protected String nombre;
-	
-	
-	public Jugador(String nombre)
-	{
-		this.nombre = nombre;
-	}
-	
-	
-	
-	@Override
-	public String toString()
-	{
-		return nombre;
-	}
+public interface Jugador {
+	public void intentaMovida(Ficha unaFicha, Ubicacion nuevaUbicacion);
+	public void mueveFicha(Ficha unaFicha, Ubicacion nuevaUbicacion);
+	public Ubicacion calculaDestino(Ficha unaFicha, Ubicacion nuevaUbicacion);
+	public ArrayList<Ubicacion> posiblesDestinos(Ubicacion unaUbicacion, ArrayList<Movimiento> unosMovimientos);
 }
