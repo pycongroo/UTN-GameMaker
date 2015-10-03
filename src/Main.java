@@ -5,8 +5,7 @@ public class Main
 
 	public static void main(String[] args) 
 	{
-		Scanner scanner = new Scanner(System.in);
-		
+				
 		Juego juego = JuegoFactory.getJuego();
 		
 		Jugador jugador1 = juego.jugador1();
@@ -17,19 +16,21 @@ public class Main
 		System.out.println("Comienza el juego "+juego+"! "+jugador1+" vs "+jugador2+"! \n");
 		
 		
-		boolean esMovimientoValido = false;
+		boolean juegoTerminado = false;
+		Movimiento movimiento;
 		
-		while(!esMovimientoValido)
-		{
-			juego.mostrarTablero();
+		while(!juegoTerminado)
+		{		
+			movimiento = juego.gestionarMovimiento(jugador1);
 			
-			System.out.println("Es el turno de "+jugador1+", ingrese el numero de casillero donde desea poner la ficha: ");
+			juegoTerminado = juego.estaFinalizado(movimiento, jugador1);
 			
-			int casillero = scanner.nextInt();
+			if(juegoTerminado)
+				break;
 			
-			Movimiento movimiento = juego.crearMovimiento(jugador1, casillero);
+			movimiento = juego.gestionarMovimiento(jugador2);
 			
-			esMovimientoValido = juego.esMovimientoValido(movimiento);
+			juegoTerminado = juego.estaFinalizado(movimiento, jugador2);
 		}
 	}
 

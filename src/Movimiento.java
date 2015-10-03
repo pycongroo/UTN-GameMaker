@@ -1,4 +1,5 @@
 
-public interface Movimiento {
-
+public interface Movimiento 
+{
+	boolean esMovimientoFinal();
 }

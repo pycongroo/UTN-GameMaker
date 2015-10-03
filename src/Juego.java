@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public abstract class Juego 
@@ -33,10 +34,45 @@ public abstract class Juego
 	}
 	
 	
+	
+	
+	
+	
 	@Override
 	public String toString()
 	{
 		return nombre;
+	}
+	
+	
+	
+	public Movimiento gestionarMovimiento(Jugador jugador)
+	{
+		Scanner scanner = new Scanner(System.in);	
+		
+		Movimiento movimiento = null;
+		
+		System.out.println("Es el turno de "+jugador+"!\n");
+		
+		this.mostrarTablero();
+		
+		System.out.println("Ingrese el número de casillero donde quiera depositar su ficha: ");
+		
+		boolean esMovimientoValido = false;
+		
+		while(!esMovimientoValido)
+		{			
+			int casillero = scanner.nextInt();
+			
+			movimiento = this.crearMovimiento(jugador, casillero);
+			
+			esMovimientoValido = this.esMovimientoValido(movimiento);
+			
+			if(!esMovimientoValido)
+				System.out.println("Ese movimiento no es válido! Ingrese el casillero otra vez:");
+		}
+		
+		return movimiento;		
 	}
 
 
@@ -64,5 +100,22 @@ public abstract class Juego
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
+
+
+	public boolean estaFinalizado(Movimiento movimiento, Jugador jugador) 
+	{
+		if(movimiento.esMovimientoFinal())
+		{
+			this.mostrarTablero();
+			
+			System.out.println("El jugador "+jugador+" es el ganador!!\n");
+			
+			return true;
+		}
+		
+		return false;
+	}	
 
 }
