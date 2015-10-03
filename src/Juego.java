@@ -1,68 +1,26 @@
 import java.util.ArrayList;
-import java.util.List;
 
-
-public abstract class Juego 
-{
-	private String nombre;	
-	private List<Ficha> fichas;
-	private Tablero tablero;
+public abstract class Juego {
+	protected Tablero tablero;
+	protected ArrayList<Regla> reglas;
+	protected ArrayList<Jugador> jugadores;
+	//protected ArrayList<Condicion> condicion;
+	//protected Puntaje[] puntajes;
+	//verifica movimientos
+	public abstract boolean esValido(Movimiento unMovimiento);
+	//public abstract boolean hayGanador();
 	
-	Jugador jugador1;
-	Jugador jugador2;
-	
-	
-	public Juego(String nombre, Tablero tablero, List<Ficha> fichas)
-	{
-		this.nombre = nombre;
+	//defino metodos concretos
+	public Juego setTablero(Tablero tablero){
 		this.tablero = tablero;
-		this.fichas = fichas;
+		return this;
 	}
-	
-	
-
-
-	public Jugador jugador1() 
-	{
-		return jugador1;
+	public Juego setReglas(ArrayList<Regla> reglas){
+		this.reglas = reglas;
+		return this;
 	}
-	
-	public Jugador jugador2() 
-	{
-		return jugador2;
+	public Juego setJugadores(ArrayList<Jugador> jugadores){
+		this.jugadores = jugadores;
+		return this;
 	}
-	
-	
-	@Override
-	public String toString()
-	{
-		return nombre;
-	}
-
-
-
-
-	public void mostrarTablero() 
-	{
-		// TODO Auto-generated method stub		
-	}
-
-
-
-
-	public Movimiento crearMovimiento(Jugador jugador, int casillero) 
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-
-	public boolean esMovimientoValido(Movimiento movimiento) 
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }
