@@ -1,26 +1,26 @@
-import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Juego {
-	protected Tablero tablero;
-	protected ArrayList<Regla> reglas;
-	protected ArrayList<Jugador> jugadores;
-	//protected ArrayList<Condicion> condicion;
-	//protected Puntaje[] puntajes;
-	//verifica movimientos
-	public abstract boolean esValido(Movimiento unMovimiento);
-	//public abstract boolean hayGanador();
+//clase implementada como singleton
+public class Juego {
+	private static Juego instance = new Juego();
+	private Tablero tablero;
+	private List<Ficha> fichas;
+	private List<Estado> estados;
 	
-	//defino metodos concretos
-	public Juego setTablero(Tablero tablero){
-		this.tablero = tablero;
-		return this;
+	//
+	public Juego(){}
+	
+	public static Juego getInstance(){
+		return instance;
 	}
-	public Juego setReglas(ArrayList<Regla> reglas){
-		this.reglas = reglas;
-		return this;
+	
+	public void cargarPropiedades(){
+		
 	}
-	public Juego setJugadores(ArrayList<Jugador> jugadores){
-		this.jugadores = jugadores;
-		return this;
+	
+	public void inicializarComponentes(){}
+	
+	public void cambiarTurno(){
+		
 	}
 }

@@ -1,8 +1,8 @@
-import java.util.ArrayList;
 
-public interface Jugador {
-	public void intentaMovida(Ficha unaFicha, Ubicacion nuevaUbicacion);
-	public void mueveFicha(Ficha unaFicha, Ubicacion nuevaUbicacion);
-	public Ubicacion calculaDestino(Ficha unaFicha, Ubicacion nuevaUbicacion);
-	public ArrayList<Ubicacion> posiblesDestinos(Ubicacion unaUbicacion, ArrayList<Movimiento> unosMovimientos);
+public class Jugador {
+	private String nombre;
+	private String bando;//clase sujeto a cambios
+	
+	public void realizarJugada(){}
+	
 }

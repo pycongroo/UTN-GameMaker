@@ -1,19 +1,12 @@
-import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Ficha {
-	private ArrayList<Movimiento> movimientos;
+public class Ficha {
+	private List<Movimiento> movimientos;
+	private Ubicacion ubicacion;
+	private String bando;//clase sujeta a cambios
 	
-	public Ficha addMovimiento(Movimiento unMovimiento){
-		this.movimientos.add(unMovimiento);
-		return this;
+	public void cambiaUbicacion(Ubicacion unaUbicacion){
+		this.ubicacion = unaUbicacion;
 	}
-	public ArrayList<Movimiento> getMovimientos(){
-		return this.movimientos;
-	}
-	protected abstract Ubicacion nuevoDestino(Ubicacion ubicacion, Movimiento unMovimiento);
-	public ArrayList<Ubicacion> posiblesDestinos(Ubicacion ub_actual){
-		ArrayList<Ubicacion> n_ubs = new ArrayList<Ubicacion>();
-		this.getMovimientos().stream().forEach(aMov -> n_ubs.add(nuevoDestino(ub_actual, aMov)));
-		return n_ubs;
-	}
+	
 }
