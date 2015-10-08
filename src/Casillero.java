@@ -8,9 +8,11 @@ public class Casillero extends JButton {
 	private Ubicacion ubicacion;
 	
 	public Casillero(Ubicacion ubicacion, Color color){
+		//super("HOLA");
 		this.ubicacion = ubicacion;
 		this.ficha = null;
 		this.color = color;
 		this.setBackground(color);
+		//this.setVisible(true);
 	}
 }
