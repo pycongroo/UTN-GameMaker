@@ -1,9 +1,13 @@
 import java.util.List;
 
-public class Ficha {
+import javax.swing.ImageIcon;
+
+public abstract class Ficha {
 	private List<Movimiento> movimientos;
 	private Ubicacion ubicacion;
-	private String bando;//clase sujeta a cambios
+	private Bando bando;//clase sujeta a cambios
+	
+	private ImageIcon imagen;
 	
 	public void cambiaUbicacion(Ubicacion unaUbicacion){
 		this.ubicacion = unaUbicacion;

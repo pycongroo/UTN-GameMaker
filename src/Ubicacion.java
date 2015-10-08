@@ -1,6 +1,7 @@
+import java.awt.Point;
 
-public class Ubicacion {
-	int x_axis;
-	int y_axis;
-
+public class Ubicacion extends Point {
+	public Ubicacion(int x ,int y){
+		super(x,y);
+	}
 }
