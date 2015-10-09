@@ -25,8 +25,8 @@ public class Tablero extends JPanel {
 	
 	public void inicializarTablero(){
 		System.out.println("inicializando tablero");
-		for (int x=0; x<this.filas; x++){
-			for (int y=0; y<this.columnas; y++){
+		for (int y=0; y<this.columnas; y++){
+			for (int x=0; x<this.filas; x++){
 				Color color = (( x + y ) % 2 == 0) ? Color.WHITE : Color.ORANGE;
 				this.casilleros[x][y] = new Casillero(new Ubicacion(x,y), color);
 				this.casilleros[x][y].addActionListener(casilleroManager);
@@ -35,6 +35,13 @@ public class Tablero extends JPanel {
 			}
 		}
 		//this.setVisible(true);
+	}
+	public void agregarFicha(Ubicacion ubicacion, Ficha unaFicha){
+		casilleros[ubicacion.x][ubicacion.y].setFicha(unaFicha);
+	}
+	
+	public Ficha getFichaAt(Ubicacion unaUbicacion){
+		return casilleros[unaUbicacion.x][unaUbicacion.y].getFicha();
 	}
 
 }
