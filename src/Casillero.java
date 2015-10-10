@@ -34,4 +34,10 @@ public class Casillero extends JButton {
 		return color;
 	}
 	
+	public void quitarFicha(){
+		this.ficha=null;
+	}
+	public String toString(){
+		return this.ficha.toString()+this.ubicacion.toString();
+	}
 }

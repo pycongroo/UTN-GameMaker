@@ -27,7 +27,13 @@ public class CasilleroManager implements ActionListener {
 				this.desasignar();
 			} else if (Juego.getInstance().esValido(this.seleccionado, this.casillero)){
 				System.out.println("valido");
-				this.iluminarCasillero(casillero);
+				Ficha auxFicha = this.seleccionado.getFicha();
+				auxFicha.setUbicacion(this.casillero.getUbicacion());
+				this.casillero.setFicha(auxFicha);
+				//this.seleccionado.setFicha(null);
+				//this.seleccionado.quitarFicha();
+				this.desasignar();
+				System.out.println(this.seleccionado.toString());
 			}
 		}
 	}
